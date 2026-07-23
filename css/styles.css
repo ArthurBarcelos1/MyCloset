@@ -54,7 +54,7 @@ main::-webkit-scrollbar{
 .model-image{
     width:200px;
     height:390px;
-    background:#f7f7f7;
+    background:#fafafa;
     border-radius:20px;
 }
 
@@ -108,15 +108,21 @@ main::-webkit-scrollbar{
 ========================== */
 
 .categories{
+
     display:flex;
     gap:10px;
     overflow-x:auto;
-    padding-bottom:5px;
-    margin-bottom:22px;
+    padding-bottom:15px;
+    scrollbar-width:none;
 }
 
 .categories::-webkit-scrollbar{
     display:none;
+}
+
+.categories-wrapper{
+    position:relative;
+    margin-bottom:22px;
 }
 
 .categories button{
@@ -132,6 +138,52 @@ main::-webkit-scrollbar{
     box-shadow: 3px 3px 5px #d8d8d8;
 }
 
+.categories-wrapper::before,
+.categories-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    bottom:0;
+
+    width:35px;
+
+    z-index:5;
+
+    pointer-events:none;
+}
+
+.categories-wrapper::before{
+
+    left:0;
+
+    background:linear-gradient(
+        to right,
+        white 0%,
+        rgba(255,255,255,0) 100%
+    );
+}
+
+.categories-wrapper::after{
+
+    right:0;
+
+    background:linear-gradient(
+        to left,
+        white 0%,
+        rgba(255,255,255,0) 100%
+    );
+}
+
+.sideStartButton{
+    margin-left: 30px;
+}
+
+.sideEndButton{
+    margin-right: 30px;
+}
 /* ==========================
    PRODUTOS
 ========================== */
@@ -145,7 +197,7 @@ main::-webkit-scrollbar{
 .product{
     position:relative;
     aspect-ratio:1;
-    background:#efefef;
+    background:#fafafa;
     border-radius:6px;
     box-shadow: 3px 3px 5px #d8d8d8;
 }
@@ -203,7 +255,7 @@ main::-webkit-scrollbar{
 .bottom-bar{
     position:fixed;
     left: 50%;
-    top: 87%;
+    top: 92%;
     transform:translateX(-50%);
     width:300px;
     height:50px;
