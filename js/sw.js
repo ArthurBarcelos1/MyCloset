@@ -1,4 +1,4 @@
-const CACHE_NAME = "MyCloset-v1.1.0";
+const CACHE_NAME = "MyCloset-v1.1.1";
 
 const urlsToCache = [
     "./",
@@ -12,8 +12,8 @@ const urlsToCache = [
 
     "./js/app.js",
 
-    "./images/icons/icon-192.png",
-    "./images/icons/icon-512.png"
+    "./icons/icon-192.png",
+    "./icons/icon-512.png"
 ];
 
 self.addEventListener("install", event => {
