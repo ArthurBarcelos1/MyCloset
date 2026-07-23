@@ -1,6 +1,6 @@
-# 👗 Fashion Closet
+# 👗 MyCloset
 
-Fashion Closet é um projeto de interface desenvolvido em **HTML** e **CSS** que simula um aplicativo de gerenciamento de roupas e criação de looks. O objetivo é permitir que o usuário visualize seu guarda-roupa, escolha peças e monte combinações de forma simples e intuitiva.
+MyCloset é um projeto de interface desenvolvido em **HTML** e **CSS** que simula um aplicativo de gerenciamento de roupas e criação de looks. O objetivo é permitir que o usuário visualize seu guarda-roupa, escolha peças e monte combinações de forma simples e intuitiva.
 
 ## 📱 Páginas
 
