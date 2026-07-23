@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyCloset - Catálogo</title>
-    <link rel="manifest" href="manifest.json">
+    <title>MyCloset - Home</title>
     <meta name="theme-color" content="#f7b8df">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,6 +21,14 @@
 
     <main>
 
+        <div class="model-container">
+            <div class="model-image">
+                <!-- Modelo ficará aqui futuramente -->
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
         <div class="search-box">
             <input type="text" id="search" placeholder="Pesquisar produtos...">
             <button>
@@ -31,11 +38,10 @@
 
         <div class="categories-wrapper">
             <div class="categories">
-                <button class="sideStartButton">Camisas</button>
-                <button>Blusas</button>
-                <button>Blusas de Frio</button>
-                <button>Sapatos</button>
-                <button>Bolsas</button>
+                <button class="sideStartButton">Vestidos</button>
+                <button>Camisas</button>
+                <button>Tênis</button>
+                <button>Blusas de frio</button>
                 <button>Saias</button>
                 <button class="sideEndButton">Calças</button>
             </div>
@@ -72,6 +78,8 @@
 
 </div>
 <script src="js/search.js"></script>
-<script src="js/functions.js"></script>
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/functions.js"></script>
+<script type="module" src="js/home.js"></script>
 </body>
 </html>

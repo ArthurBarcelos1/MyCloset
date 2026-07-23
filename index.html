@@ -2,77 +2,69 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyCloset - Home</title>
+    <title>MyCloset - Login</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="theme-color" content="#f7b8df">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="MyCloset">
+
+    <link rel="icon" type="image/png" href="icons/MainIcon.png">
     <link rel="apple-touch-icon" href="icons/icon-192.png">
+
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<script src="app.js"></script>
-<body>
 
-<div class="phone">
+<body class="login-page">
 
-    <main>
+<div class="background"></div>
 
-        <div class="model-container">
-            <div class="model-image">
-                <!-- Modelo ficará aqui futuramente -->
-            </div>
-        </div>
+<div class="login">
 
-        <div class="divider"></div>
+    <img src="icons/MainIcon.png" class="logo">
 
-        <div class="search-box">
-            <input type="text" placeholder="">
-            <button>
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </div>
+    <h1>MyCloset</h1>
 
-        <div class="categories-wrapper">
-            <div class="categories">
-                <button class="sideStartButton">Vestidos</button>
-                <button>Camisas</button>
-                <button>Tênis</button>
-                <button>Blusas de frio</button>
-                <button>Saias</button>
-                <button class="sideEndButton">Calças</button>
-            </div>
-        </div>
+    <p class="subtitle">
+        Entre para acessar sua conta.
+    </p>
 
-        <div class="products">
+    <div class="field">
 
-            <div class="product"></div>
+        <label>Email</label>
 
-        </div>
+        <input
+            type="email"
+            id="email"
+            placeholder="Digite seu email">
 
-    </main>
+    </div>
 
-    <nav class="bottom-bar">
-        <a href="index.html"><button>
-            <i class="fa-solid fa-user"></i>
-        </button></a>
+    <div class="field">
 
-        <a href="catalogo.html"><button>
-            <i class="fa-solid fa-shirt"></i>
-        </button></a>
+        <label>Senha</label>
 
-        <a href="designs.html"><button>
-            <i class="fa-solid fa-plus"></i>
-        </button></a>
+        <input
+            type="password"
+            id="password"
+            placeholder="Digite sua senha">
 
-        <a href="liked.html"><button>
-            <i class="fa-solid fa-heart""></i>
-        </button></a>
-    </nav>
+    </div>
+
+    <button id="loginButton">
+        Entrar
+    </button>
+
+    <p id="error"></p>
 
 </div>
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/functions.js"></script>
+<script type="module" src="js/auth.js"></script>
 
 </body>
 </html>
