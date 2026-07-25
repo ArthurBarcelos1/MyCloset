@@ -22,3 +22,24 @@ document.querySelectorAll(".product").forEach(product => {
         badge.remove();
     }
 });
+
+const snap = await getDoc(doc(db,"users",user.uid));
+const role = snap.data().role;
+
+if(role==="Admin"){
+
+    document
+        .getElementById("adminBtn")
+        .style.display="flex";
+
+}
+
+export async function getUserRole(uid){
+
+    const snap = await getDoc(doc(db,"users",uid));
+
+    return snap.data().role;
+
+}
+
+import { db, doc, getDoc } from "./firebase.js";
