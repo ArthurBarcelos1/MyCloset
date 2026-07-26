@@ -1,85 +1,183 @@
-# 👗 Fashion Closet
+# 👕 MyCloset
 
-Fashion Closet é um projeto de interface desenvolvido em **HTML** e **CSS** que simula um aplicativo de gerenciamento de roupas e criação de looks. O objetivo é permitir que o usuário visualize seu guarda-roupa, escolha peças e monte combinações de forma simples e intuitiva.
+MyCloset é uma aplicação web desenvolvida para facilitar o gerenciamento de um guarda-roupa digital. O usuário pode visualizar roupas, pesquisar peças, favoritar itens e organizar seu catálogo de forma prática e intuitiva.
 
-## 📱 Páginas
+O projeto foi desenvolvido utilizando HTML, CSS, JavaScript puro e Firebase.
 
-### 🕵️‍♂️ Login
-- Login no site
+---
 
-### 🏠 Home
-- Barra de pesquisa.
-- Categorias de roupas.
-- Grade com as peças disponíveis.
-- Identificação de itens novos.
-- Barra de navegação inferior.
+## ✨ Funcionalidades
 
-### 🎨 Designs
-- Barra de pesquisa.
-- Grade com os designs/looks salvos.
-- Pré-visualização de cada design.
-- Barra de navegação inferior.
+- 🔐 Login com autenticação Firebase
+- 👤 Controle de usuários
+- 🏠 Página inicial com catálogo de roupas
+- 🔎 Pesquisa de roupas
+- ❤️ Sistema de favoritos
+- 🆕 Identificação automática de peças recém-adicionadas
+- 📱 Interface responsiva
+- 📦 Progressive Web App (PWA)
+- 👑 Painel administrativo para usuários administradores
 
-### 👤 Outfit
-- Área reservada para exibição da modelo.
-- Barra de pesquisa.
-- Categorias de roupas.
-- Grade de peças para vestir a modelo.
-- Barra de navegação inferior.
+---
 
-### ❤️ Liked
-- Roupas favoritadas pelo usuário
+## 📄 Páginas
 
-## 🛠️ Tecnologias
+### Login (`index.html`)
+- Autenticação por e-mail e senha.
+- Redirecionamento automático caso o usuário já esteja logado.
+
+### Home (`home.html`)
+- Exibição das roupas.
+- Pesquisa de produtos.
+- Categorias.
+- Destaque para peças novas.
+- Navegação principal.
+
+### Catálogo (`catalogo.html`)
+- Visualização completa das roupas cadastradas.
+
+### Designs (`designs.html`)
+- Área destinada aos looks e combinações.
+
+### Favoritos (`liked.html`)
+- Exibe apenas as roupas marcadas como favoritas.
+
+### Administração (`admin.html`)
+Disponível apenas para usuários com permissão de administrador.
+
+---
+
+## 🛠 Tecnologias
 
 - HTML5
 - CSS3
-- Firebase
+- JavaScript (ES6 Modules)
+- Firebase Authentication
+- Cloud Firestore
+- Progressive Web App (PWA)
+
+---
 
 ## 📂 Estrutura do Projeto
 
 ```
-Fashion-Closet/
+MyCloset/
+│
+├── css/
+│   └── styles.css
+│
+├── js/
+│   ├── app.js
+│   ├── auth.js
+│   ├── firebase.js
+│   ├── functions.js
+│   ├── home.js
+│   ├── search.js
+│   └── sw.js
+│
+├── icons/
 │
 ├── index.html
+├── home.html
+├── catalogo.html
 ├── designs.html
-├── outfit.html
 ├── liked.html
+├── admin.html
 │
-├── style.css
-│
-├── images/
-│   ├── clothes/
-│   └── icons/
-│
+├── manifest.json
 └── README.md
 ```
 
-## 🎨 Design
+---
 
-A interface utiliza uma paleta em tons de rosa claro para transmitir uma aparência moderna e delicada.
+## 🔥 Firebase
 
-Principais características:
+O projeto utiliza o Firebase para:
 
-- Layout inspirado em aplicativos mobile;
-- Interface responsiva para telas de smartphones;
-- Bordas arredondadas;
-- Sombras suaves;
-- Navegação simples e intuitiva.
+- Autenticação de usuários
+- Armazenamento das informações dos usuários
+- Controle de permissões (Administrador e Usuário)
 
-## 🚧 Status
+---
 
-O projeto encontra-se em desenvolvimento.
+## 👤 Controle de Permissões
 
-Funcionalidades futuras:
+Existem dois tipos de usuários:
 
-- Inserção de roupas pelo usuário;
-- Sistema de categorias;
-- Favoritos;
-- Criação e salvamento de looks;
-- Modelo interativa para experimentar roupas;
-- Sincronização na nuvem.
+### Usuário
+- Acessa o catálogo.
+- Pesquisa roupas.
+- Favorita peças.
+
+### Administrador
+Além das funções do usuário, possui acesso ao painel administrativo.
+
+---
+
+## 📱 Progressive Web App
+
+O projeto pode ser instalado como aplicativo em dispositivos compatíveis.
+
+Recursos disponíveis:
+
+- Manifest
+- Ícones personalizados
+- Service Worker
+- Funcionamento como aplicativo
+
+---
+
+## 🚀 Como executar
+
+1. Clone o repositório
+
+```bash
+git clone https://github.com/ArthurBarcelos1/MyCloset.git
+```
+
+2. Abra a pasta do projeto.
+
+3. Configure seu projeto no Firebase.
+
+4. Insira suas credenciais no arquivo:
+
+```
+js/firebase.js
+```
+
+5. Execute utilizando um servidor local, como:
+
+- Live Server (VS Code)
+- XAMPP
+- Apache
+- Firebase Hosting
+
+---
+
+## 📌 Melhorias futuras
+
+- Cadastro de roupas pelo administrador
+- Upload de imagens
+- Filtros avançados
+- Organização por categorias
+- Compartilhamento de looks
+- Histórico de favoritos
+- Melhor suporte offline
+
+---
+
+## 📸 Interface
+
+A interface foi desenvolvida com foco em simplicidade, responsividade e facilidade de navegação, oferecendo uma experiência semelhante à de aplicativos móveis.
+
+---
+
+## Funcionalidade
+
+O site ainda está em fase de desenvolvimento e várias funcionalidades ainda não funcionam.
+
+---
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins educacionais e de aprendizado.
+Este projeto foi desenvolvido para fins de estudo e aprendizado.
