@@ -195,24 +195,16 @@ main::-webkit-scrollbar{
 .product{
     position:relative;
     aspect-ratio:1;
+    border-radius: 10px;
+    border-color: #f7b8df;
+    border-width: 4px;
+    border-style: solid;
 }
 
 .product img{
     max-width: 90%;
     max-height: 90%;
     margin: 5%;
-}
-
-.new{
-    position:absolute;
-    top:6px;
-    right:6px;
-    padding:4px 12px;
-    background:#f7b8df;
-    color:#fff;
-    font-size:10px;
-    font-weight:bold;
-    border-radius:20px;
 }
 
 /* ==========================
@@ -254,18 +246,34 @@ main::-webkit-scrollbar{
 ========================== */
 
 .bottom-bar{
-    position:fixed;
+    position: fixed;
     left: 50%;
-    top: 91,5%;
-    transform:translateX(-50%);
-    width:300px;
-    height:50px;
-    display:flex;
-    justify-content:space-evenly;
-    align-items:center;
-    background:#f7b8df;
-    border-radius:40px;
-    opacity:.9;
+    top: 91%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(247, 184, 223, 0.20) 0%,
+            rgba(247, 184, 223, 0.35) 65%,
+            rgba(247, 184, 223, 0.50) 100%
+        );
+
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+
+    border-radius: 40px;
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,.15),
+        inset 0 1px 1px rgba(255,255,255,.35);
+    overflow: hidden;
 }
 
 .bottom-bar button{
@@ -280,6 +288,7 @@ main::-webkit-scrollbar{
 .bottom-bar button:hover{
     transform:scale(1.15);
 }
+
 
 /* ==========================
    Login

@@ -1,4 +1,4 @@
-const CACHE_NAME = "MyCloset-v1.81.01";
+const CACHE_NAME = "MyCloset-v1.82.0";
 
 const urlsToCache = [
     "./",
