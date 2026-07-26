@@ -1,4 +1,4 @@
-const CACHE_NAME = "MyCloset-v1.81.0";
+const CACHE_NAME = "MyCloset-v1.81.01";
 
 const urlsToCache = [
     "./",
@@ -17,7 +17,6 @@ const urlsToCache = [
     "./js/firebase.js",
     "./js/auth.js",
     "./js/home.js",
-    "./js/admin.js",
 
     "./clothes/blusas.js",
     "./clothes/blusas-de-frio.js",

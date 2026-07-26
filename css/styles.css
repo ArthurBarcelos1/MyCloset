@@ -1,3 +1,7 @@
+/* ==========================
+   RESET
+========================== */
+
 *{
     margin:0;
     padding:0;
@@ -380,7 +384,7 @@ main::-webkit-scrollbar{
     border:none;
     border-radius:14px;
     background:#f7b8df;
-    color:#444;
+    color:#fff;
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
@@ -432,33 +436,4 @@ main::-webkit-scrollbar{
 
     }
 
-}
-
-#logout{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #f39ed2;
-    font-size: 22px;
-    cursor: pointer;
-    transition: .25s;
-    margin-left: 90%;
-}
-
-#logout:hover{
-    color: #e53935;
-    transform: translateY(-2px);
-}
-C
-#logout:active{
-    transform: scale(.92);
-}
-
-#logout i{
-    pointer-events: none;
 }
