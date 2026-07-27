@@ -147,23 +147,17 @@ main::-webkit-scrollbar{
 .categories-wrapper::after{
 
     content:"";
-
     position:absolute;
-
     top:0;
     bottom:0;
-
     width:35px;
-
     z-index:5;
-
     pointer-events:none;
 }
 
 .categories-wrapper::before{
 
     left:0;
-
     background:linear-gradient(
         to right,
         white 0%,
@@ -174,7 +168,6 @@ main::-webkit-scrollbar{
 .categories-wrapper::after{
 
     right:0;
-
     background:linear-gradient(
         to left,
         white 0%,
@@ -206,7 +199,7 @@ main::-webkit-scrollbar{
     aspect-ratio:1;
     border-radius: 10px;
     border-color: var(--cor1);
-    border-width: 4px;
+    border-width: 3px;
     border-style: solid;
 }
 
@@ -509,3 +502,7 @@ main::-webkit-scrollbar{
     margin: 0;
     color: #8a8a8a;
 }
+
+/* ==========================
+   Admin
+========================== */
