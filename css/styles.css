@@ -7,6 +7,7 @@
     --cor2: rgba(255, 79, 176, 1);
     --cor3: rgb(212, 212, 212);
     --cor4: rgb(255, 255, 255);
+    --cor5: rgba(246, 183, 222, 0.5);
 }
 
 
@@ -390,14 +391,18 @@ main::-webkit-scrollbar{
     padding:0 15px;
     font-size:15px;
     transition:.2s;
-
+    border-color: var(--cor1);
 }
 
 .field input:focus{
 
     outline:none;
     border-color:var(--cor2);
+    background-color: var(--cor5);
+}
 
+.field input:hover {
+    border-color:var(--cor2);
 }
 
 #loginButton{
@@ -417,8 +422,8 @@ main::-webkit-scrollbar{
 
 #loginButton:hover{
 
-    transform:translateY(-2px);
-    background:var(--cor1);
+    transform:scale(1.05);
+    background:var(--cor2);
 
 }
 
@@ -459,6 +464,21 @@ main::-webkit-scrollbar{
 
     }
 
+}
+
+.LogOutBTN {
+    
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--cor1);
+    color: var(--cor4);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 /* ==========================
