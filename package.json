@@ -1,0 +1,17 @@
+{
+  "name": "mycloset",
+  "version": "1.0.0",
+  "description": "MyCloset é uma aplicação web desenvolvida para facilitar o gerenciamento de um guarda-roupa digital. O usuário pode visualizar roupas, pesquisar peças, favoritar itens e organizar seu catálogo de forma prática e intuitiva.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.19.0",
+    "form-data": "^4.0.6"
+  }
+}

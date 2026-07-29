@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCloset - Designs</title>
+    <meta name="theme-color" content="#f7b8df">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MyCloset">
+    <link rel="icon" type="image/png" href="icons/MainIcon.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script type="importmap">
+        {
+        "imports": {
+            "@huggingface/transformers":
+            "https://cdn.jsdelivr.net/npm/@huggingface/transformers"
+        }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script type="module" src="js/new.js"></script>
+</head>
+<body>
+
+<div class="phone">
+
+    <main>
+
+        <div class="search-box">
+            <input type="text" placeholder="Pesquisar designs...">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="designs">
+
+            <div class="product NewBTN" id="NewBTN">
+                <button class="sideStartButton" id="sideStartButton"><img src="icons/new.png"></button>
+            </div>
+
+            <div class="card" style="display: none;">
+                <div class="preview"></div>
+                <span id="DesignName"></span>
+            </div>
+
+        </div>
+
+        <div class="NewItem" style="display: none;">
+            <div class="NewItemCard">
+
+                <input type="text" id="DesignNameInput" placeholder="Nome do design">
+
+                <label class="ImageUpload" for="ImageInput">
+                    <input type="file" id="ImageInput" accept="image/*">
+
+                    <img id="ImagePreview" src="" alt="Pré-visualização">
+
+                    <span id="UploadIcon">📷</span>
+                    <p id="UploadText">Selecionar imagem</p>
+                </label>
+
+                <div class="NewItemCardBTNS">
+                    <button id="SaveDesignBTN">Salvar</button>
+                    <button id="CancelDesignBTN">Cancelar</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    </main>
+    
+    <nav class="bottom-bar">
+        <a href="home.html"><button>
+            <i class="fa-solid fa-user"></i>
+        </button></a>
+
+        <a href="catalogo.html"><button>
+            <i class="fa-solid fa-shirt"></i>
+        </button></a>
+
+        <a href="designs.html" class="selectedBTN"><button>
+            <i class="fa-solid fa-plus"></i>
+        </button></a>
+
+        <a href="liked.html"><button>
+            <i class="fa-solid fa-heart"></i>
+        </button></a>
+
+        <a href="admin.html" id="adminBTN" style="display: none;" ><button>
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+        </button></a>
+    </nav>
+
+</div>
+<script src="js/search.js"></script>
+<script src="js/role.js"></script>
+</body>
+</html>
