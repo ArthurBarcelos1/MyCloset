@@ -9,9 +9,11 @@ export default async function handler(req, res) {
         });
     }
 
+
     try {
 
         const { image } = req.body;
+
 
         if (!image) {
             return res.status(400).json({
@@ -51,18 +53,19 @@ export default async function handler(req, res) {
             .toString("base64");
 
 
-        res.status(200).json({
+        return res.status(200).json({
             image: result
         });
 
 
-    } catch (error) {
+    } catch(error) {
 
-        console.error(error);
+        console.error(error.response?.data || error);
 
-        res.status(500).json({
-            error: "Erro ao remover fundo"
+        return res.status(500).json({
+            error: "Erro interno"
         });
 
     }
+
 }
