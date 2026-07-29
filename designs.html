@@ -29,10 +29,8 @@
 
         <div class="designs">
 
-            <div class="PageNotFound">
-                <h1>ERRO</h1>
-                <h2>A página ainda está em desenvolvimento</h2>
-                <h3>Volte mais tarde</h3>
+            <div class="product NewBTN" id="NewBTN">
+                <button class="sideStartButton" id="sideStartButton"><img src="icons/new.png"></button>
             </div>
 
             <div class="card" style="display: none;">
@@ -41,6 +39,30 @@
             </div>
 
         </div>
+
+        <div class="NewItem" style="display: none;">
+            <div class="NewItemCard">
+
+                <input type="text" id="DesignNameInput" placeholder="Nome do design">
+
+                <label class="ImageUpload" for="ImageInput">
+                    <input type="file" id="ImageInput" accept="image/*">
+
+                    <img id="ImagePreview" src="" alt="Pré-visualização">
+
+                    <span id="UploadIcon">📷</span>
+                    <p id="UploadText">Selecionar imagem</p>
+                </label>
+
+                <div class="NewItemCardBTNS">
+                    <button id="SaveDesignBTN">Salvar</button>
+                    <button id="CancelDesignBTN">Cancelar</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
     </main>
     
@@ -69,5 +91,6 @@
 </div>
 <script src="js/search.js"></script>
 <script src="js/role.js"></script>
+<script src="js/new.js"></script>
 </body>
 </html>

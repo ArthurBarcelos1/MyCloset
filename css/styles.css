@@ -8,6 +8,7 @@
     --cor3: rgb(212, 212, 212);
     --cor4: rgb(255, 255, 255);
     --cor5: rgba(246, 183, 222, 0.5);
+    --cor6: rgba(255, 79, 176, 0.2);
 }
 
 
@@ -210,6 +211,18 @@ main::-webkit-scrollbar{
     margin: 5%;
 }
 
+.sideStartButton {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    margin: 0;
+}
+
+.sideStartButton:hover {
+    cursor: pointer;
+}
+
 /* ==========================
    DESIGNS
 ========================== */
@@ -244,11 +257,139 @@ main::-webkit-scrollbar{
     font-weight:bold;
 }
 
+.NewItem {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.5); /* Fundo cinza escuro */
+    z-index: 1000;
+}
+
+.NewItemCard {
+    width: min(90vw, 500px);
+    min-width: 300px;
+    max-width: 450px;
+
+    padding: 20px;
+    border: 3px solid var(--cor1);
+    border-radius: 10px;
+    background: var(--cor4);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+#DesignNameInput {
+    width: 100%;
+    height: 45px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    border: #f7b8df 2px solid;
+    border-radius: 10px;
+}
+
+.ImageUpload {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    min-height: 160px;
+    max-height: 280px;
+
+    border: 2px dashed var(--cor1);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.ImageUpload input {
+    display: none;
+}
+
+.ImageUpload span {
+    font-size: 42px;
+}
+
+.ImageUpload p {
+    margin-top: 10px;
+}
+
+.NewItemCardBTNS {
+    display: flex;
+    gap: 10px;
+}
+
+.NewItemCardBTNS button {
+    flex: 1;
+    height: 45px;
+}
+
+#SaveDesignBTN, #CancelDesignBTN {
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: .2s;
+}
+
+#SaveDesignBTN {
+    background: var(--cor1);
+    color: white;
+    border: none;
+}
+
+#SaveDesignBTN:hover {
+    filter: brightness(0.9);
+}
+
+#CancelDesignBTN {
+    background: transparent;
+    color: var(--cor2);
+    border: 2px solid var(--cor2);
+}
+
+#CancelDesignBTN:hover {
+    background: var(--cor6);
+}
+
+.ImageUpload {
+    position: relative;
+    overflow: hidden;
+}
+
+#ImagePreview {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#UploadIcon {
+    font-size: 48px;
+}
+
+#UploadText {
+    margin-top: 10px;
+}
+
 /* ==========================
    BARRA INFERIOR
 ========================== */
 
 .bottom-bar{
+    z-index: 9999;
     position: fixed;
     left: 50%;
     top: 91%;
