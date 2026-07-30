@@ -7,42 +7,76 @@ import {
     getDocs
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
+
 const products = document.querySelector(".products");
 
-auth.onAuthStateChanged(async (user) => {
 
-    if (!user) return;
+// Se a página não tiver produtos, não executa
+if (products) {
 
-    // Limpa a lista
-    products.innerHTML = "";
+    auth.onAuthStateChanged(async (user) => {
 
-    const q = query(
-        collection(db, "roupas"),
-        where("uid", "==", user.uid)
-    );
+        if (!user) return;
 
-    const snapshot = await getDocs(q);
 
-    snapshot.forEach((doc) => {
+        products.innerHTML = "";
 
-        const roupa = doc.data();
 
-        const product = document.createElement("div");
-        product.className = "product";
-        product.id = doc.id;
+        const q = query(
+            collection(db, "roupas"),
+            where("uid", "==", user.uid)
+        );
 
-        const img = document.createElement("img");
-        img.src = `https://res.cloudinary.com/dvosyomdy/image/upload/${roupa.imagem}.png`;
-        img.alt = roupa.nome;
 
-        const like = document.createElement("i");
-        like.className = "fa-regular fa-heart likeBTN";
+        const snapshot = await getDocs(q);
 
-        product.appendChild(img);
-        product.appendChild(like);
 
-        products.appendChild(product);
+        snapshot.forEach((doc) => {
+
+            const roupa = doc.data();
+
+
+            const product = document.createElement("div");
+
+            product.className = "product";
+
+            // ID do documento Firebase
+            product.id = doc.id;
+
+
+            const img = document.createElement("img");
+
+            img.src = `https://res.cloudinary.com/dvosyomdy/image/upload/${roupa.imagem}.png`;
+
+            img.alt = roupa.nome;
+
+
+            const like = document.createElement("i");
+
+            like.classList.add("likeBTN");
+
+
+            if (roupa.liked === 1) {
+
+                like.className = "fa-solid fa-heart likeBTN";
+
+            } else {
+
+                like.className = "fa-regular fa-heart likeBTN";
+
+            }
+
+
+            product.appendChild(img);
+
+            product.appendChild(like);
+
+
+            products.appendChild(product);
+
+
+        });
 
     });
 
-});
+}
