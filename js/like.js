@@ -17,6 +17,7 @@ document.addEventListener("click", async (event) => {
 
     if (!product) return;
 
+    console.log("ID da roupa:", product.id);
 
     const roupaId = product.id;
 
