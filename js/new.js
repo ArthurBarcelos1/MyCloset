@@ -34,9 +34,8 @@ imageInput.addEventListener("change", async () => {
 
     try {
 
-        const imagemSemFundo = await removeBackground(file);
+        imagemSemFundo = await removeBackground(file);
 
-        // Troca pela imagem sem fundo
         imagePreview.src = imagemSemFundo;
 
 
@@ -44,6 +43,108 @@ imageInput.addEventListener("change", async () => {
 
         console.error(error);
         alert("Erro ao remover fundo da imagem");
+
+    }
+
+});
+
+import { auth, db } from "./firebase.js";
+
+import {
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+let imagemSemFundo = null;
+
+const saveButton = document.getElementById("SaveDesignBTN");
+
+saveButton.addEventListener("click", async () => {
+
+    try {
+
+        const nome = document.getElementById("DesignNameInput").value.trim();
+
+        if (!nome) {
+            alert("Digite um nome.");
+            return;
+        }
+
+        if (!imagemSemFundo) {
+            alert("Selecione uma imagem.");
+            return;
+        }
+
+        if (!auth.currentUser) {
+            alert("Usuário não está logado.");
+            return;
+        }
+
+        saveButton.disabled = true;
+        saveButton.textContent = "Salvando...";
+
+        // Upload para o Cloudinary
+        const uploadResponse = await fetch("https://my-closet-plum.vercel.app/api/uploadCloudinary", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                image: imagemSemFundo
+            })
+
+        });
+
+        const uploadData = await uploadResponse.json();
+
+        if (!uploadData.public_id) {
+            throw new Error("Falha no upload da imagem.");
+        }
+
+        // Salva no Firestore
+        await addDoc(collection(db, "roupas"), {
+
+            uid: auth.currentUser.uid,
+
+            nome: nome,
+
+            imagem: uploadData.public_id,
+
+            criadoEm: serverTimestamp()
+
+        });
+
+        alert("Roupa salva com sucesso!");
+
+        // Limpa formulário
+        document.getElementById("DesignNameInput").value = "";
+
+        imageInput.value = "";
+
+        imagemSemFundo = null;
+
+        imagePreview.removeAttribute("src");
+        imagePreview.style.display = "none";
+
+        uploadIcon.style.display = "block";
+        uploadText.style.display = "block";
+
+        newItem.style.display = "none";
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Erro ao salvar a roupa.");
+
+    } finally {
+
+        saveButton.disabled = false;
+        saveButton.textContent = "Salvar";
 
     }
 
