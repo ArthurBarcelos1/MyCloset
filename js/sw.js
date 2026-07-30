@@ -11,15 +11,20 @@ const urlsToCache = [
 
     "./css/styles.css",
 
+    "./js/admin.js",
     "./js/app.js",
-    "./js/search.js",
-    "./js/firebase.js",
     "./js/auth.js",
+    "./js/firebase.js",
+    "./js/functions.js",
     "./js/home.js",
+    "./js/like.js",
+    "./js/liked.js",
+    "./js/load.js",
     "./js/logout.js",
-    "./js/role.js",
     "./js/new.js",
     "./js/removeBG.js",
+    "./js/role.js",
+    "./js/search.js",
 
     "./icons/new.png",
     "./icons/MainIcon.png",
