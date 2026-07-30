@@ -4,7 +4,7 @@ export async function removeBackground(file) {
 
     const base64 = await fileToBase64(file);
 
-    const response = await fetch("/api/removeBackground", {
+    const response = await fetch("https://my-closet-plum.vercel.app/api/removeBackground", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
