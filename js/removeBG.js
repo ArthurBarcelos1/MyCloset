@@ -1,9 +1,9 @@
 export async function removeBackground(file) {
 
-    // Converte a imagem para Base64
+    console.log("Enviando imagem para remover fundo:", file.name);
+
     const base64 = await fileToBase64(file);
 
-    // Envia para a Vercel Function
     const response = await fetch("/api/removeBackground", {
         method: "POST",
         headers: {
@@ -14,19 +14,18 @@ export async function removeBackground(file) {
         })
     });
 
+    console.log("Resposta da Vercel:", response.status);
 
     const data = await response.json();
 
+    console.log("Dados recebidos:", data);
 
     if (!data.image) {
-        throw new Error("Erro ao remover fundo");
+        throw new Error("Imagem não retornada");
     }
 
-
-    // Retorna a imagem PNG sem fundo
     return "data:image/png;base64," + data.image;
 }
-
 
 
 function fileToBase64(file) {
@@ -35,17 +34,9 @@ function fileToBase64(file) {
 
         const reader = new FileReader();
 
-
         reader.onload = () => {
-
-            // Remove o começo:
-            // data:image/png;base64,
-            const base64 = reader.result.split(",")[1];
-
-            resolve(base64);
-
+            resolve(reader.result.split(",")[1]);
         };
-
 
         reader.onerror = reject;
 
