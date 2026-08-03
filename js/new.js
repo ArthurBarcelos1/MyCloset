@@ -1,4 +1,10 @@
 import { removeBackground } from "./removeBG.js";
+import { auth, db } from "./firebase.js";
+import {
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const newItem = document.querySelector(".NewItem");
 
@@ -17,46 +23,24 @@ const uploadIcon = document.getElementById("UploadIcon");
 const uploadText = document.getElementById("UploadText");
 
 
-imageInput.addEventListener("change", async () => {
-
+imageInput.addEventListener("change", () => {
     const file = imageInput.files[0];
 
-    if (!file) return;
+    if (!file) {
+        imagePreview.removeAttribute("src");
+        imagePreview.style.display = "none";
+        uploadIcon.style.display = "block";
+        uploadText.style.display = "block";
+        return;
+    }
 
-
-    // Mostra a imagem original enquanto processa
+    // Mostra apenas a imagem original selecionada (sem chamar a API)
     imagePreview.src = URL.createObjectURL(file);
     imagePreview.style.display = "block";
 
     uploadIcon.style.display = "none";
     uploadText.style.display = "none";
-
-
-    try {
-
-        imagemSemFundo = await removeBackground(file);
-
-        imagePreview.src = imagemSemFundo;
-
-
-    } catch (error) {
-
-        console.error(error);
-        alert("Erro ao remover fundo da imagem");
-
-    }
-
 });
-
-import { auth, db } from "./firebase.js";
-
-import {
-    collection,
-    addDoc,
-    serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-let imagemSemFundo = null;
 
 const saveButton = document.getElementById("SaveDesignBTN");
 
@@ -65,13 +49,14 @@ saveButton.addEventListener("click", async () => {
     try {
 
         const nome = document.getElementById("DesignNameInput").value.trim();
+        const file = imageInput.files[0];
 
         if (!nome) {
             alert("Digite um nome.");
             return;
         }
 
-        if (!imagemSemFundo) {
+        if (!file) {
             alert("Selecione uma imagem.");
             return;
         }
@@ -82,6 +67,11 @@ saveButton.addEventListener("click", async () => {
         }
 
         saveButton.disabled = true;
+        saveButton.textContent = "Removendo fundo...";
+
+        // Remove o fundo da imagem apenas ao salvar
+        const imagemSemFundo = await removeBackground(file);
+
         saveButton.textContent = "Salvando...";
 
         // Upload para o Cloudinary
@@ -122,10 +112,7 @@ saveButton.addEventListener("click", async () => {
 
         // Limpa formulário
         document.getElementById("DesignNameInput").value = "";
-
         imageInput.value = "";
-
-        imagemSemFundo = null;
 
         imagePreview.removeAttribute("src");
         imagePreview.style.display = "none";
