@@ -2,7 +2,8 @@ import { auth, db } from "./firebase.js";
 import {
     doc,
     getDoc,
-    setDoc
+    setDoc,
+    serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 // ============================================================
@@ -201,15 +202,7 @@ async function processAndUploadModelPhoto(file) {
 
         const cloudinaryUrl = `https://res.cloudinary.com/dvosyomdy/image/upload/${uploadData.public_id}.png`;
 
-        // Salva no Firestore com timestamp
-        await setDoc(doc(db, "modelos", currentUserId), {
-            uid: currentUserId,
-            imagem: cloudinaryUrl,
-            atualizadoEm: { toMillis: () => Date.now(), seconds: Math.floor(Date.now() / 1000), nanoseconds: 0 }
-        });
-
-        // Usa serverTimestamp real
-        const { serverTimestamp } = await import("https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js");
+        // Salva no Firestore com timestamp do servidor
         await setDoc(doc(db, "modelos", currentUserId), {
             uid: currentUserId,
             imagem: cloudinaryUrl,
