@@ -13,6 +13,7 @@
     <link rel="apple-touch-icon" href="icons/icon-192.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script type="module" src="js/categories.js"></script>
 </head>
 <script src="js/app.js"></script>
 <body>
@@ -22,8 +23,18 @@
     <main>
 
         <div class="model-container">
-            <div class="model-image">
-                <!-- Modelo ficará aqui futuramente -->
+            <div class="model-image" id="ModelImage">
+                <img id="ModelImgDisplay" src="" alt="Modelo" style="display: none;">
+
+                <label class="ModelUploadLabel" id="ModelUploadLabel" for="ModelFileInput">
+                    <input type="file" id="ModelFileInput" accept="image/*">
+                    <span id="ModelUploadIcon">📷</span>
+                    <p id="ModelUploadText">Adicionar foto do modelo</p>
+                </label>
+
+                <button id="ChangeModelBTN" class="change-model-btn" style="display: none;" title="Alterar foto do modelo">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
             </div>
         </div>
 
@@ -38,13 +49,6 @@
 
         <div class="categories-wrapper">
             <div class="categories">
-                <button class="sideStartButton">Camisas</button>
-                <button>Blusas</button>
-                <button>Blusas de Frio</button>
-                <button>Sapatos</button>
-                <button>Bolsas</button>
-                <button>Vestidos</button>
-                <button class="sideEndButton">Calças</button>
             </div>
         </div>
 
@@ -86,6 +90,7 @@
 <script type="module" src="js/firebase.js"></script>
 <script type="module" src="js/home.js"></script>
 <script type="module" src="js/logout.js"></script>
+<script type="module" src="js/model.js"></script>
 <script src="js/role.js"></script>
 <script type="module" src="js/load.js"></script>
 </body>

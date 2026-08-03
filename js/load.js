@@ -42,6 +42,9 @@ if (products) {
 
             // ID do documento Firebase
             product.id = doc.id;
+            product.dataset.nome = roupa.nome || "";
+            product.dataset.categoria = roupa.categoria || "";
+            product.dataset.imagem = roupa.imagem || "";
 
 
             const img = document.createElement("img");

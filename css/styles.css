@@ -63,6 +63,93 @@ main::-webkit-scrollbar{
 .model-image{
     width:200px;
     height:350px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 3px dashed var(--cor1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(246, 183, 222, 0.08);
+}
+
+.model-image.has-photo {
+    border: 3px solid var(--cor1);
+    background: transparent;
+}
+
+#ModelImgDisplay {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    position: absolute;
+    inset: 0;
+}
+
+.ModelUploadLabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 2;
+    padding: 16px;
+    text-align: center;
+}
+
+.ModelUploadLabel input[type="file"] {
+    display: none;
+}
+
+.ModelUploadLabel span {
+    font-size: 36px;
+}
+
+.ModelUploadLabel p {
+    font-size: 13px;
+    color: var(--cor2);
+    font-weight: bold;
+    margin: 0;
+}
+
+.change-model-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    z-index: 10;
+    background: var(--cor2);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: .2s;
+}
+
+.change-model-btn:hover {
+    transform: scale(1.1);
+    background: var(--cor1);
+}
+
+.model-cooldown-msg {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    z-index: 10;
+    padding: 0 4px;
 }
 
 /* ==========================
@@ -121,6 +208,14 @@ main::-webkit-scrollbar{
     overflow-x:auto;
     padding-bottom:15px;
     scrollbar-width:none;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-x;
+}
+
+.categories:active {
+    cursor: grabbing;
 }
 
 .categories::-webkit-scrollbar{
@@ -223,18 +318,16 @@ main::-webkit-scrollbar{
 }
 
 .Itens {
-    display: flex;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
     width: 100%;
-    align-items: flex-start;
+    justify-items: start;
 }
 
-
-.designs {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    flex-shrink: 0;
+.Itens .designs,
+.Itens .products {
+    display: contents;
 }
 
 /* ==========================
@@ -305,10 +398,9 @@ main::-webkit-scrollbar{
 
 .ImageUpload {
     width: 100%;
-    aspect-ratio: 16 / 9;
-
-    min-height: 160px;
-    max-height: 280px;
+    max-width: 220px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
 
     border: 2px dashed var(--cor1);
     border-radius: 10px;
@@ -321,6 +413,8 @@ main::-webkit-scrollbar{
     cursor: pointer;
     user-select: none;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
 }
 
 .ImageUpload input {
@@ -333,6 +427,12 @@ main::-webkit-scrollbar{
 
 .ImageUpload p {
     margin-top: 10px;
+}
+
+.categories button.selectedCategory {
+    background: var(--cor2);
+    color: var(--cor4);
+    box-shadow: 0 0 8px var(--cor2);
 }
 
 .NewItemCardBTNS {
@@ -362,6 +462,26 @@ main::-webkit-scrollbar{
     filter: brightness(0.9);
 }
 
+#DeleteDesignBTN {
+    background: #ff3b30;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: .2s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50px;
+    cursor: pointer;
+}
+
+#DeleteDesignBTN:hover {
+    background: #e02b20;
+    transform: scale(1.05);
+}
+
 #CancelDesignBTN {
     background: transparent;
     color: var(--cor2);
@@ -372,16 +492,12 @@ main::-webkit-scrollbar{
     background: var(--cor6);
 }
 
-.ImageUpload {
-    position: relative;
-    overflow: hidden;
-}
-
 #ImagePreview {
     display: none;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 #UploadIcon {
