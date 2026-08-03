@@ -7,12 +7,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 // ============================================================
-// ⏱️ CONTROLE DE COOLDOWN
+// CONTROLE DE COOLDOWN
 // Altere o valor abaixo para controlar quantos DIAS o usuário
 // precisa esperar antes de poder trocar a foto do modelo.
 // Exemplos: 1 = 1 dia, 0.5 = 12 horas, 7 = 1 semana
 // ============================================================
-const COOLDOWN_DAYS = 1;
+const COOLDOWN_DAYS = 31;
 
 // ============================================================
 

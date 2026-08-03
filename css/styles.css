@@ -463,8 +463,8 @@ main::-webkit-scrollbar{
 }
 
 #DeleteDesignBTN {
-    background: #ff3b30;
-    color: white;
+    background: var(--cor1);
+    color: var(--cor2);
     border: none;
     font-weight: bold;
     border-radius: 10px;
@@ -478,7 +478,31 @@ main::-webkit-scrollbar{
 }
 
 #DeleteDesignBTN:hover {
-    background: #e02b20;
+    background: var(--cor2);
+    color: var(--cor4);
+    transform: scale(1.05);
+}
+
+#EditDeleteBTN {
+    background: var(--cor1);
+    color: var(--cor2);
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: .2s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50px;
+    cursor: pointer;
+    flex: 1;
+    height: 45px;
+}
+
+#EditDeleteBTN:hover {
+    background: var(--cor2);
+    color: var(--cor4);
     transform: scale(1.05);
 }
 

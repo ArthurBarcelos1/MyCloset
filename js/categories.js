@@ -1,13 +1,13 @@
 // Lista centralizada de categorias. Para adicionar ou remover uma categoria, altere este array:
 export const CATEGORIES = [
-    "Camisas",
+    "Bolsas",
     "Blusas",
     "Blusas de Frio",
-    "Sapatos",
-    "Bolsas",
-    "Vestidos",
     "Calças",
-    "Saias"
+    "Camisas",
+    "Saias",
+    "Sapatos",
+    "Vestidos"
 ];
 
 // Renderiza os botões em todos os containers de classe .categories na página
