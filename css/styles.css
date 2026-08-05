@@ -75,7 +75,7 @@ main::-webkit-scrollbar{
 }
 
 .model-image.has-photo {
-    border: 3px solid var(--cor1);
+    border: none;
     background: transparent;
 }
 
@@ -152,6 +152,47 @@ main::-webkit-scrollbar{
     padding: 0 4px;
 }
 
+.vto-progress {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--cor2);
+}
+
+.vto-progress::after {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin-left: 3px;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: var(--cor2);
+    animation: vtoDots 1.2s infinite;
+}
+
+@keyframes vtoDots {
+    0%,
+    20% {
+        box-shadow:
+            7px 0 var(--cor2),
+            14px 0 var(--cor2);
+    }
+
+    40% {
+        box-shadow:
+            0 0 var(--cor2),
+            7px 0 var(--cor2);
+    }
+
+    60%,
+    100% {
+        box-shadow:
+            0 0 var(--cor2),
+            7px 0 transparent;
+    }
+}
 /* ==========================
    DIVISOR
 ========================== */

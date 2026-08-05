@@ -1,4 +1,4 @@
-const CACHE_NAME = "MyCloset-v1.910.002";
+const CACHE_NAME = "MyCloset-v1.910.003";
 
 const urlsToCache = [
     "./",
@@ -28,6 +28,7 @@ const urlsToCache = [
     "./js/removeBG.js",
     "./js/role.js",
     "./js/search.js",
+    "./js/vton.js",
 
     "./icons/new.png",
     "./icons/MainIcon.png",

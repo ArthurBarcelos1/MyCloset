@@ -12,7 +12,7 @@ import {
 // precisa esperar antes de poder trocar a foto do modelo.
 // Exemplos: 1 = 1 dia, 0.5 = 12 horas, 7 = 1 semana
 // ============================================================
-const COOLDOWN_DAYS = 31;
+const COOLDOWN_DAYS = 1;
 
 // ============================================================
 
