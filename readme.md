@@ -1,183 +1,47 @@
-# 👕 MyCloset
+# MyCloset
 
-MyCloset é uma aplicação web desenvolvida para facilitar o gerenciamento de um guarda-roupa digital. O usuário pode visualizar roupas, pesquisar peças, favoritar itens e organizar seu catálogo de forma prática e intuitiva.
+**MyCloset** é um guarda-roupa digital desenvolvido para organizar, visualizar e gerenciar peças de roupa de forma prática.
 
-O projeto foi desenvolvido utilizando HTML, CSS, JavaScript puro e Firebase.
+O projeto foi criado para uso pessoal e reúne diferentes recursos para catalogação de roupas, criação de combinações e gerenciamento visual do guarda-roupa.
 
----
+> **Status:** Em desenvolvimento
 
-## ✨ Funcionalidades
+## Funcionalidades
 
-- 🔐 Login com autenticação Firebase
-- 👤 Controle de usuários
-- 🏠 Página inicial com catálogo de roupas
-- 🔎 Pesquisa de roupas
-- ❤️ Sistema de favoritos
-- 🆕 Identificação automática de peças recém-adicionadas
-- 📱 Interface responsiva
-- 📦 Progressive Web App (PWA)
-- 👑 Painel administrativo para usuários administradores
+* Catálogo digital de roupas
+* Organização por categorias
+* Pesquisa de peças
+* Sistema de favoritos
+* Identificação de peças adicionadas recentemente
+* Criação e gerenciamento de designs
+* Upload de imagens
+* Remoção automática de fundo das imagens
+* Interface responsiva
+* Suporte a PWA
+* Recursos de inteligência artificial em desenvolvimento
 
----
+## Tecnologias
 
-## 📄 Páginas
+* HTML5
+* CSS3
+* JavaScript
+* Firebase
+* Cloudinary
+* Vercel
+* Progressive Web App (PWA)
 
-### Login (`index.html`)
-- Autenticação por e-mail e senha.
-- Redirecionamento automático caso o usuário já esteja logado.
+## Interface
 
-### Home (`home.html`)
-- Exibição das roupas.
-- Pesquisa de produtos.
-- Categorias.
-- Destaque para peças novas.
-- Navegação principal.
+O MyCloset foi desenvolvido com foco em uma interface simples e visual, permitindo que as peças sejam apresentadas de forma semelhante a um catálogo pessoal.
 
-### Catálogo (`catalogo.html`)
-- Visualização completa das roupas cadastradas.
+## Inteligência Artificial
 
-### Designs (`designs.html`)
-- Área destinada aos looks e combinações.
+O projeto está incorporando recursos de inteligência artificial para aprimorar a experiência de gerenciamento das roupas.
 
-### Favoritos (`liked.html`)
-- Exibe apenas as roupas marcadas como favoritas.
+Entre os recursos em desenvolvimento está o **Virtual Try-On (VTO)**, permitindo visualizar peças aplicadas a um modelo virtual.
 
-### Administração (`admin.html`)
-Disponível apenas para usuários com permissão de administrador.
+## Desenvolvimento
 
----
+O MyCloset é um projeto pessoal desenvolvido e mantido por **Arthur Barcelos**.
 
-## 🛠 Tecnologias
-
-- HTML5
-- CSS3
-- JavaScript (ES6 Modules)
-- Firebase Authentication
-- Cloud Firestore
-- Progressive Web App (PWA)
-
----
-
-## 📂 Estrutura do Projeto
-
-```
-MyCloset/
-│
-├── css/
-│   └── styles.css
-│
-├── js/
-│   ├── app.js
-│   ├── auth.js
-│   ├── firebase.js
-│   ├── functions.js
-│   ├── home.js
-│   ├── search.js
-│   └── sw.js
-│
-├── icons/
-│
-├── index.html
-├── home.html
-├── catalogo.html
-├── designs.html
-├── liked.html
-├── admin.html
-│
-├── manifest.json
-└── README.md
-```
-
----
-
-## 🔥 Firebase
-
-O projeto utiliza o Firebase para:
-
-- Autenticação de usuários
-- Armazenamento das informações dos usuários
-- Controle de permissões (Administrador e Usuário)
-
----
-
-## 👤 Controle de Permissões
-
-Existem dois tipos de usuários:
-
-### Usuário
-- Acessa o catálogo.
-- Pesquisa roupas.
-- Favorita peças.
-
-### Administrador
-Além das funções do usuário, possui acesso ao painel administrativo.
-
----
-
-## 📱 Progressive Web App
-
-O projeto pode ser instalado como aplicativo em dispositivos compatíveis.
-
-Recursos disponíveis:
-
-- Manifest
-- Ícones personalizados
-- Service Worker
-- Funcionamento como aplicativo
-
----
-
-## 🚀 Como executar
-
-1. Clone o repositório
-
-```bash
-git clone https://github.com/ArthurBarcelos1/MyCloset.git
-```
-
-2. Abra a pasta do projeto.
-
-3. Configure seu projeto no Firebase.
-
-4. Insira suas credenciais no arquivo:
-
-```
-js/firebase.js
-```
-
-5. Execute utilizando um servidor local, como:
-
-- Live Server (VS Code)
-- XAMPP
-- Apache
-- Firebase Hosting
-
----
-
-## 📌 Melhorias futuras
-
-- Cadastro de roupas pelo administrador
-- Upload de imagens
-- Filtros avançados
-- Organização por categorias
-- Compartilhamento de looks
-- Histórico de favoritos
-- Melhor suporte offline
-
----
-
-## 📸 Interface
-
-A interface foi desenvolvida com foco em simplicidade, responsividade e facilidade de navegação, oferecendo uma experiência semelhante à de aplicativos móveis.
-
----
-
-## Funcionalidade
-
-O site ainda está em fase de desenvolvimento e várias funcionalidades ainda não funcionam.
-
----
-
-## 📄 Licença
-
-Este projeto foi desenvolvido para fins de estudo e aprendizado.
+O projeto continua em desenvolvimento e novas funcionalidades e melhorias são adicionadas conforme a aplicação evolui.
