@@ -15,6 +15,7 @@ const urlsToCache = [
     "./js/app.js",
     "./js/auth.js",
     "./js/categories.js",
+    "./js/categoryFilter.js",
     "./js/editModal.js",
     "./js/firebase.js",
     "./js/functions.js",
